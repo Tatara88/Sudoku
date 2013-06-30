@@ -5,6 +5,7 @@ using namespace std;
 void displayMain();
 void viewRules();
 void displayGraph(int array[9][9]);
+
 int menuChoiceValidation(int x);
 
 int main()
@@ -31,10 +32,10 @@ int main()
 	int chartArray[9][9] = {
 							{1, 2, 3, 4, 5, 6, 7, 8, 9},
 							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 4, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 4, 7, 8, 9},
 							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 6, 6, 6, 7, 8, 9},
 							{1, 2, 3, 4, 5, 6, 7, 8, 9},
 							{1, 2, 3, 4, 5, 6, 7, 8, 9},
 							{1, 2, 3, 4, 5, 6, 7, 8, 9}
@@ -127,33 +128,31 @@ int menuChoiceValidation(int x)
 void displayGraph(int array[][9])
 {
 
-	/*		
-		A B C   D E F   G H I
-	1	0 0 0 | 0 0 0 | 0 0 0
-	2	0 0 0 | 0 0 0 | 0 0 0
-	3	0 0 0 | 0 0 0 | 0 0 0
-		------+-------+------
-	4	0 0 0 | 0 0 0 | 0 0 0
-	5	0 0 0 | 0 0 0 | 0 0 0
-	6	0 0 0 | 0 0 0 | 0 0 0
-		------+-------+------
-	7	0 0 0 | 0 0 0 | 0 0 0
-	8	0 0 0 | 0 0 0 | 0 0 0
-	9	0 0 0 | 0 0 0 | 0 0 0
-
-	row|col
-	[0][0]
-
-	*/
+	// Display Col Letters
+	cout << "   A B C    D E F    G H I " << endl << endl;
 
 	//Rows
 	for(int index1 = 0; index1 < 9; index1++)
 	{
+		// Display Row Numbers
+		cout << (index1+1) << "  ";
+
 		//Col
 		for(int index2 = 0; index2 < 9; index2++)
 		{
 			cout << array[index1][index2] << " ";
+
+			// Box Division
+			if(index2 == 2 || index2 == 5 )
+				cout << " | ";
+
 		}
 		cout << endl;
+		if(index1 == 2 || index1 == 5)
+		{
+			cout << "   -----------------------"
+				 << endl;
+		}
 	}
+	cout << endl;
 }
