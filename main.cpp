@@ -4,7 +4,7 @@ using namespace std;
 // Function Prototypes
 void displayMain();
 void viewRules();
-void displayGraph(int array[]);
+void displayGraph(int array[9][9]);
 int menuChoiceValidation(int x);
 
 int main()
@@ -28,7 +28,17 @@ int main()
 	9	0 0 0 | 0 0 0 | 0 0 0
 
 	*/
-	int chartArray[9][9];
+	int chartArray[9][9] = {
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9},
+							{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	};
 
 	/*
 	// TESTING ROW ONLY
@@ -76,7 +86,7 @@ int main()
 	cout << "TESTING ARRAY COL END" << endl;
 
 	*/
-	displayGraph(chartArray[9][9]);
+	displayGraph(chartArray);
 	displayMain();
 	cin >> menuChoice;
 
@@ -114,7 +124,7 @@ int menuChoiceValidation(int x)
 	
 	return x;
 }
-void displayGraph(int array[9][9])
+void displayGraph(int array[][9])
 {
 
 	/*		
