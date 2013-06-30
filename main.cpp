@@ -1,7 +1,11 @@
 #include <iostream>
+// A library to make use of the rand() and srand() functions.
+#include <cstdlib>
+// A library that contains definitions for time and time functions
+#include <ctime>
 using namespace std;
 
-// Function Prototypes
+// ************* Start Function Prototypes ************* 
 
 // Displays Main menu
 void displayMain(int * x);
@@ -16,13 +20,14 @@ void viewCredits();
 // Display current graph.
 void displayGraph(int array[][9]);
 
+// ************* End Function Prototypes ************* 
 
 int main()
 {
 	// menuChoice chooses from 1-3 at the displayMain function.
 	int menuChoice;
 
-	// 
+	// Two-Dimensional array to hold all the user input.
 	int chartArray[9][9] = {
 								{1, 2, 3, 4, 5, 6, 7, 8, 9},
 								{1, 2, 3, 4, 5, 6, 7, 8, 9},
@@ -34,10 +39,7 @@ int main()
 								{1, 2, 3, 4, 5, 6, 7, 8, 9},
 								{1, 2, 3, 4, 5, 6, 7, 8, 9}
 							};
-
-
-
-
+	// Loop the program until the user decides to quit.
 	do 
 	{
 		// Display Graph
@@ -51,17 +53,10 @@ int main()
 
 	} while (menuChoice >=1 && menuChoice <=3);
 
-
-
 	// End of code.
 	return 0;
 
 }
-
-
-
-
-
 
 // Displays Main menu
 void displayMain(int * x)
@@ -69,10 +64,10 @@ void displayMain(int * x)
 	system("cls");
 	cout << "Welcome to Sodoku project!" << endl
 		 << "Description HERE........." << endl << endl
-		 << "1.\tPlay" << endl
-		 << "2.\tRules" << endl
-		 << "3.\tCredits" << endl
-		 << "(Any Other Key)\tQuit" << endl << endl
+		 << "1.\t\tPlay" << endl
+		 << "2.\t\tRules" << endl
+		 << "3.\t\tCredits" << endl
+		 << "(Other Keys)\tQuit" << endl << endl
 		 << "Please make a your selection (1-3): ";
 	cin >>  * x;
 }
