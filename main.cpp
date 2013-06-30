@@ -10,10 +10,45 @@ int main()
 {
 	//menuChoice user selection variable.
 	int menuChoice;
+	int chartArray[9][9];
 
+	// TESTING ONLY
+	//			row|col
+	chartArray	[0][0] = 1;
+	chartArray	[1][0] = 2;
+	chartArray	[2][0] = 3;
+
+	chartArray	[3][0] = 4;
+	chartArray	[4][0] = 5;
+	chartArray	[5][0] = 6;
+
+	chartArray	[6][0] = 7;
+	chartArray	[7][0] = 8;
+	chartArray	[8][0] = 9;
+
+	for(int index = 0;index < 9;index++)
+	{
+		cout << chartArray[index][0] << endl;
+	}
+
+	/*
+		
+		A B C   D E F   G H I
+	1	0 0 0 | 0 0 0 | 0 0 0
+	2	0 0 0 | 0 0 0 | 0 0 0
+	3	0 0 0 | 0 0 0 | 0 0 0
+		------+-------+------
+	4	0 0 0 | 0 0 0 | 0 0 0
+	5	0 0 0 | 0 0 0 | 0 0 0
+	6	0 0 0 | 0 0 0 | 0 0 0
+		------+-------+------
+	7	0 0 0 | 0 0 0 | 0 0 0
+	8	0 0 0 | 0 0 0 | 0 0 0
+	9	0 0 0 | 0 0 0 | 0 0 0
+
+	*/
 	displayMain();
 	cin >> menuChoice;
-
 
 	system("pause");
 	return 0;
@@ -43,7 +78,7 @@ void viewRules()
 		 << "\t3. Number can appear only once on each region" << endl << endl;
 
 }
-//Validates menuChoice thats 1-4 and not a character.
+// Validates menuChoice thats 1-4 and not a character.
 int menuChoiceValidation(int x)
 {
 	
