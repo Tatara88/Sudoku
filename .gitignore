@@ -8,6 +8,7 @@
 *.aps
 *.pch
 *.vcxproj*
+*.sln
 *.vspscc
 *.vssscc
 *_i.c
