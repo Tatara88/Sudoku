@@ -8,9 +8,9 @@ using namespace std;
 // ************* Start Function Prototypes ************* 
 
 // Displays Main menu
-void displayMain(int * x);
+void displayMain(char * x);
 // Displays user selection.
-void menuChoiceSelection(int x);
+void menuChoiceSelection(char x);
 // Starts the game.
 void startGame();
 // Displays Game Rules.
@@ -25,7 +25,7 @@ void displayGraph(int array[][9]);
 int main()
 {
 	// menuChoice chooses from 1-3 at the displayMain function.
-	int menuChoice;
+	char menuChoice;
 
 	// Two-Dimensional array to hold all the user input.
 	int chartArray[9][9] = {
@@ -51,7 +51,7 @@ int main()
 		// User has made a selection, pass the argument by value.
 		menuChoiceSelection(menuChoice);
 
-	} while (menuChoice >=1 && menuChoice <=3);
+	} while (menuChoice == '1'||'2'||'3');
 
 	// End of code.
 	return 0;
@@ -59,7 +59,7 @@ int main()
 }
 
 // Displays Main menu
-void displayMain(int * x)
+void displayMain(char * x)
 {
 	system("cls");
 	cout << "Welcome to Sodoku project!" << endl
@@ -72,21 +72,21 @@ void displayMain(int * x)
 	cin >>  * x;
 }
 // Displays user selection.
-void menuChoiceSelection(int x)
+void menuChoiceSelection(char x)
 {
 	switch(x)
 	{
-		case 1:
+		case '1':
 			startGame();
 			break;
-		case 2:
+		case '2':
 			viewRules();
 			break;
-		case 3:
+		case '3':
 			viewCredits();
 			break;
 		default :
-			exit;
+			exit(0);
 	}
 	system("pause");
 }
