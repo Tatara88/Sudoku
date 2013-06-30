@@ -4,32 +4,13 @@ using namespace std;
 // Function Prototypes
 void displayMain();
 void viewRules();
+void displayGraph(int array[]);
 int menuChoiceValidation(int x);
 
 int main()
 {
 	//menuChoice user selection variable.
 	int menuChoice;
-	int chartArray[9][9];
-
-	// TESTING ONLY
-	//			row|col
-	chartArray	[0][0] = 1;
-	chartArray	[1][0] = 2;
-	chartArray	[2][0] = 3;
-
-	chartArray	[3][0] = 4;
-	chartArray	[4][0] = 5;
-	chartArray	[5][0] = 6;
-
-	chartArray	[6][0] = 7;
-	chartArray	[7][0] = 8;
-	chartArray	[8][0] = 9;
-
-	for(int index = 0;index < 9;index++)
-	{
-		cout << chartArray[index][0] << endl;
-	}
 
 	/*
 		
@@ -47,6 +28,55 @@ int main()
 	9	0 0 0 | 0 0 0 | 0 0 0
 
 	*/
+	int chartArray[9][9];
+
+	/*
+	// TESTING ROW ONLY
+
+				row|col
+				[0][0]
+	cout << "TESTING ARRAY ROW START" << endl;
+	chartArray	[0][0] = 1;
+	chartArray	[1][0] = 2;
+	chartArray	[2][0] = 3;
+
+	chartArray	[3][0] = 4;
+	chartArray	[4][0] = 5;
+	chartArray	[5][0] = 6;
+
+	chartArray	[6][0] = 7;
+	chartArray	[7][0] = 8;
+	chartArray	[8][0] = 9;
+
+	for(int index = 0;index < 9;index++)
+	{
+		cout << chartArray[index][0] << endl;
+	}
+	cout << "TESTING ARRAY ROW END" << endl;
+
+	// TESTING COL ONLY
+	cout << "TESTING ARRAY COL START" << endl;
+	chartArray	[0][0] = 1;
+	chartArray	[0][1] = 2;
+	chartArray	[0][2] = 3;
+
+	chartArray	[0][3] = 4;
+	chartArray	[0][4] = 5;
+	chartArray	[0][5] = 6;
+
+	chartArray	[0][6] = 7;
+	chartArray	[0][7] = 8;
+	chartArray	[0][8] = 9;
+
+	for(int index = 0;index < 9;index++)
+	{
+		cout << chartArray[0][index] << endl;
+	}
+
+	cout << "TESTING ARRAY COL END" << endl;
+
+	*/
+	displayGraph(chartArray[9][9]);
 	displayMain();
 	cin >> menuChoice;
 
@@ -83,4 +113,37 @@ int menuChoiceValidation(int x)
 {
 	
 	return x;
+}
+void displayGraph(int array[9][9])
+{
+
+	/*		
+		A B C   D E F   G H I
+	1	0 0 0 | 0 0 0 | 0 0 0
+	2	0 0 0 | 0 0 0 | 0 0 0
+	3	0 0 0 | 0 0 0 | 0 0 0
+		------+-------+------
+	4	0 0 0 | 0 0 0 | 0 0 0
+	5	0 0 0 | 0 0 0 | 0 0 0
+	6	0 0 0 | 0 0 0 | 0 0 0
+		------+-------+------
+	7	0 0 0 | 0 0 0 | 0 0 0
+	8	0 0 0 | 0 0 0 | 0 0 0
+	9	0 0 0 | 0 0 0 | 0 0 0
+
+	row|col
+	[0][0]
+
+	*/
+
+	//Rows
+	for(int index1 = 0; index1 < 9; index1++)
+	{
+		//Col
+		for(int index2 = 0; index2 < 9; index2++)
+		{
+			cout << array[index1][index2] << " ";
+		}
+		cout << endl;
+	}
 }
