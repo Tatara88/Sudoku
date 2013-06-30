@@ -13,81 +13,21 @@ int main()
 	//menuChoice user selection variable.
 	int menuChoice;
 
-	/*
-		
-		A B C   D E F   G H I
-	1	0 0 0 | 0 0 0 | 0 0 0
-	2	0 0 0 | 0 0 0 | 0 0 0
-	3	0 0 0 | 0 0 0 | 0 0 0
-		------+-------+------
-	4	0 0 0 | 0 0 0 | 0 0 0
-	5	0 0 0 | 0 0 0 | 0 0 0
-	6	0 0 0 | 0 0 0 | 0 0 0
-		------+-------+------
-	7	0 0 0 | 0 0 0 | 0 0 0
-	8	0 0 0 | 0 0 0 | 0 0 0
-	9	0 0 0 | 0 0 0 | 0 0 0
-
-	*/
 	int chartArray[9][9] = {
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 4, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 4, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 6, 6, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9},
-							{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	};
+								{1, 2, 3, 4, 5, 6, 7, 8, 9},
+								{1, 2, 3, 4, 5, 6, 7, 8, 9},
+								{1, 2, 3, 4, 4, 6, 7, 8, 9},
+								{1, 2, 3, 4, 5, 4, 7, 8, 9},
+								{1, 2, 3, 4, 5, 6, 7, 8, 9},
+								{1, 2, 3, 6, 6, 6, 7, 8, 9},
+								{1, 2, 3, 4, 5, 6, 7, 8, 9},
+								{1, 2, 3, 4, 5, 6, 7, 8, 9},
+								{1, 2, 3, 4, 5, 6, 7, 8, 9}
+							};
 
-	/*
-	// TESTING ROW ONLY
+	// Display Graph
+	//displayGraph(chartArray);
 
-				row|col
-				[0][0]
-	cout << "TESTING ARRAY ROW START" << endl;
-	chartArray	[0][0] = 1;
-	chartArray	[1][0] = 2;
-	chartArray	[2][0] = 3;
-
-	chartArray	[3][0] = 4;
-	chartArray	[4][0] = 5;
-	chartArray	[5][0] = 6;
-
-	chartArray	[6][0] = 7;
-	chartArray	[7][0] = 8;
-	chartArray	[8][0] = 9;
-
-	for(int index = 0;index < 9;index++)
-	{
-		cout << chartArray[index][0] << endl;
-	}
-	cout << "TESTING ARRAY ROW END" << endl;
-
-	// TESTING COL ONLY
-	cout << "TESTING ARRAY COL START" << endl;
-	chartArray	[0][0] = 1;
-	chartArray	[0][1] = 2;
-	chartArray	[0][2] = 3;
-
-	chartArray	[0][3] = 4;
-	chartArray	[0][4] = 5;
-	chartArray	[0][5] = 6;
-
-	chartArray	[0][6] = 7;
-	chartArray	[0][7] = 8;
-	chartArray	[0][8] = 9;
-
-	for(int index = 0;index < 9;index++)
-	{
-		cout << chartArray[0][index] << endl;
-	}
-
-	cout << "TESTING ARRAY COL END" << endl;
-
-	*/
-	displayGraph(chartArray);
 	displayMain();
 	cin >> menuChoice;
 
@@ -127,11 +67,29 @@ int menuChoiceValidation(int x)
 }
 void displayGraph(int array[][9])
 {
+	/*
+		
+		A B C   D E F   G H I
+	1	0 0 0 | 0 0 0 | 0 0 0
+	2	0 0 0 | 0 0 0 | 0 0 0
+	3	0 0 0 | 0 0 0 | 0 0 0
+		------+-------+------
+	4	0 0 0 | 0 0 0 | 0 0 0
+	5	0 0 0 | 0 0 0 | 0 0 0
+	6	0 0 0 | 0 0 0 | 0 0 0
+		------+-------+------
+	7	0 0 0 | 0 0 0 | 0 0 0
+	8	0 0 0 | 0 0 0 | 0 0 0
+	9	0 0 0 | 0 0 0 | 0 0 0
+
+	*/
+
+
 
 	// Display Col Letters
 	cout << "   A B C    D E F    G H I " << endl << endl;
 
-	//Rows
+	// Rows
 	for(int index1 = 0; index1 < 9; index1++)
 	{
 		// Display Row Numbers
@@ -142,15 +100,17 @@ void displayGraph(int array[][9])
 		{
 			cout << array[index1][index2] << " ";
 
-			// Box Division
+			// Vertical Box Division
 			if(index2 == 2 || index2 == 5 )
 				cout << " | ";
 
 		}
 		cout << endl;
+
+		// Horizontal Box Devision
 		if(index1 == 2 || index1 == 5)
 		{
-			cout << "   -----------------------"
+			cout << "   -------+--------+------"
 				 << endl;
 		}
 	}
